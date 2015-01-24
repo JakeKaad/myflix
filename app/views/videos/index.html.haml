@@ -1,8 +1,10 @@
 .videos.row
   - @categories.each do |category|
-    %p= category.name
-    - 6.times do
-      .video.col-sm-2
-        - video = category.videos.sample 
-        = link_to video_path(video), nil do
-          %img(src="#{video.small_cover_url}")
+    %article.video_category
+      %h1= category.name
+    %article.row
+      - category.recent_videos.each do |video|
+        .video.col-sm-2
+          - video = category.videos.sample 
+          = link_to video_path(video), nil do
+            %img(src="#{video.small_cover_url}")

@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-
+	before_action :require_user
 	before_action :set_video, only: [:show]
 
 	def index
