@@ -16,7 +16,7 @@ describe Category do
 			expect(drama.recent_videos).to eq([gotham, monk])
 		end
 
-		it "returns all videos if there are less than 6" do
+		it "returns all videos in category if there are less than 6" do
 			drama = Category.create(name: "drama")
 			monk =	Video.create(title: "monk", description: "Sample Video", category: drama, created_at: 1.day.ago )
 			gotham =	Video.create(title: "gotham", description: "Sample Video", category: drama )
