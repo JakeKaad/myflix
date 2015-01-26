@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to home_path, notice: "Welcome back, #{@user.full_name}."
     else
-      render :new
+      flash[:error] = "Invalid email or password"
+      redirect_to login_path
     end
   end
 
