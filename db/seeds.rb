@@ -10,7 +10,7 @@ Category.create(name: "Cartoon")
 Category.create(name: "TV Drama")
 Category.create(name: "TV Action")
 
-Video.create(title: "Gotham", 
+gotham = Video.create(title: "Gotham", 
 						  description: "Discover the early days of Gotham before batman.",
 						  small_cover_url: '/tmp/gotham.jpg',
 						 	large_cover_url: '/tmp/gotham_large.jpg',
@@ -60,6 +60,11 @@ Video.create(title: "Futurama",
 						  small_cover_url: '/tmp/futurama.jpg',
 						 	large_cover_url: '/tmp/futurama.jpg',
 						 	category_id: 1)
+
+jake = User.create(email: "jake@example.com", full_name: "Jake Kaad", password: "password")
+
+Review.create(user: jake, video: gotham, rating: 1, content: "Worst show ever.")
+Review.create(user: jake, video: gotham, rating: 5, content: "Best show ever.")
 
 
 
