@@ -14,10 +14,15 @@
 
 %section.reviews.container
   .row
-    .col-sm-10.col-sm-offset-1
+    .col-sm-10.col-sm-offset-1  
       %header
         %h3 User Reviews (#{@reviews.count})
       %ul
+        = bootstrap_form_for([@video, @review]) do |f|
+          = f.select :rating, options_for_select([5, 4, 3, 2, 1].map { |n| [pluralize(n, "Star")]}), class: "span2"
+          %label Write Review
+          = f.text_area :content, rows: 6, class: "span6"
+          = f.submit "Submit Review"
         - @reviews.each do |review|
           %article.review
             %li.row
