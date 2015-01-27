@@ -61,11 +61,14 @@ Video.create(title: "Futurama",
 						 	large_cover_url: '/tmp/futurama.jpg',
 						 	category_id: 1)
 
+<<<<<<< HEAD
 jake = User.create(email: "jake@example.com", full_name: "Jake Kaad", password: "password")
 
 Review.create(user: jake, video: gotham, rating: 1, content: "Worst show ever.")
 Review.create(user: jake, video: gotham, rating: 5, content: "Best show ever.")
 
+=======
+>>>>>>> origin/master
 
 
 

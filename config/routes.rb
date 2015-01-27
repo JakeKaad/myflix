@@ -12,8 +12,11 @@ Myflix::Application.routes.draw do
     collection do
       get :search, to: 'videos#search'
     end
+<<<<<<< HEAD
 
     resources :reviews, only: [:create]
+=======
+>>>>>>> origin/master
   end
   
   resources :categories, only: [:show]
