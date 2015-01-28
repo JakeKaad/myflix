@@ -8,11 +8,8 @@ class VideosController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     @review = Review.new
     @reviews = @video.reviews
-=======
->>>>>>> origin/master
   end
 
   def search

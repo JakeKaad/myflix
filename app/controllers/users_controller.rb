@@ -10,11 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Successfully registered."
       session[:user_id] = @user.id
-<<<<<<< HEAD
       redirect_to home_path
-=======
-      redirect_to root_path
->>>>>>> origin/master
     else
       render :new
     end
