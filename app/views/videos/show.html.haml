@@ -19,7 +19,7 @@
         %h3 User Reviews (#{@reviews.count})
       %ul
         = bootstrap_form_for([@video, @review]) do |f|
-          = f.select :rating, options_for_select([5, 4, 3, 2, 1].map { |n| [pluralize(n, "Star")]}), class: "span2"
+          = f.select :rating, options_for_video_reviews, class: "span2"
           %label Write Review
           = f.text_area :content, rows: 6, class: "span6"
           = f.submit "Submit Review"
