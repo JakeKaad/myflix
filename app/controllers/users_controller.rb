@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:notice] = "Successfully registered."
+      flash[:info] = "Successfully registered."
       session[:user_id] = @user.id
       redirect_to home_path
     else

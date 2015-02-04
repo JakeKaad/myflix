@@ -21,37 +21,7 @@ Video.create(title: "Monk",
 						 	large_cover_url: '/tmp/monk_large.jpg',
 						 	category_id: 2)
 Video.create(title: "South Park", 
-						  description: "A group of 4 obscen children, in an obscene town, satirize world culture and politics.",
-						  small_cover_url: '/tmp/south_park.jpg',
-						 	large_cover_url: '/tmp/south_park.jpg',
-						 	category_id: 1)
-Video.create(title: "Futurama", 
-						  description: "Space travel!",
-						  small_cover_url: '/tmp/futurama.jpg',
-						 	large_cover_url: '/tmp/futurama.jpg',
-						 	category_id: 1)
-Video.create(title: "South Park", 
-						  description: "A group of 4 obscen children, in an obscene town, satirize world culture and politics.",
-						  small_cover_url: '/tmp/south_park.jpg',
-						 	large_cover_url: '/tmp/south_park.jpg',
-						 	category_id: 1)
-Video.create(title: "Futurama", 
-						  description: "Space travel!",
-						  small_cover_url: '/tmp/futurama.jpg',
-						 	large_cover_url: '/tmp/futurama.jpg',
-						 	category_id: 1)
-Video.create(title: "South Park", 
-						  description: "A group of 4 obscen children, in an obscene town, satirize world culture and politics.",
-						  small_cover_url: '/tmp/south_park.jpg',
-						 	large_cover_url: '/tmp/south_park.jpg',
-						 	category_id: 1)
-Video.create(title: "Futurama", 
-						  description: "Space travel!",
-						  small_cover_url: '/tmp/futurama.jpg',
-						 	large_cover_url: '/tmp/futurama.jpg',
-						 	category_id: 1)
-Video.create(title: "South Park", 
-						  description: "A group of 4 obscen children, in an obscene town, satirize world culture and politics.",
+						  description: "A group of 4 obscene children, in an obscene town, satirize world culture and politics.",
 						  small_cover_url: '/tmp/south_park.jpg',
 						 	large_cover_url: '/tmp/south_park.jpg',
 						 	category_id: 1)
@@ -61,14 +31,9 @@ Video.create(title: "Futurama",
 						 	large_cover_url: '/tmp/futurama.jpg',
 						 	category_id: 1)
 
-<<<<<<< HEAD
+
 jake = User.create(email: "jake@example.com", full_name: "Jake Kaad", password: "password")
-
-Review.create(user: jake, video: gotham, rating: 1, content: "Worst show ever.")
 Review.create(user: jake, video: gotham, rating: 5, content: "Best show ever.")
-
-=======
->>>>>>> origin/master
 
 
 
