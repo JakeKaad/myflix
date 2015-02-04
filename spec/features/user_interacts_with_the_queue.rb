@@ -16,5 +16,16 @@ feature "user interacts with the queue" do
 
     visit video_path(monk)
     expect(page).to_not have_content "+ My Queue"
+
+    visit home_path
+    find("a[href='/videos/#{gotham.id}']").click
+    click_link "+ My Queue"
+    visit home_path
+    find("a[href='/videos/#{south_park.id}']").click
+    click_link "+ My Queue"
+
+    fill_in "video_#{monk.id}", 3 
+    fill_in "video_#{gotham.id}", 1
+    fill_in "video_#{south_park.id}", 2
   end
 end
