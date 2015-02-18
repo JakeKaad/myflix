@@ -45,5 +45,9 @@ describe RelationshipsController do
       delete :destroy, id: relationship.id 
       expect(Relationship.all.length).to eq(1)
     end
+
+    it_behaves_like "require login" do 
+      let(:action) { delete :destroy, id: 1 }
+    end
   end
 end
