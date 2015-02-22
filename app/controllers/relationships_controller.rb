@@ -5,9 +5,18 @@ class RelationshipsController < ApplicationController
     @relationships = current_user.following_relationships
   end
 
+  def create
+    leader = User.find(params[:leader_id])    
+    Relationship.create(leader_id: params[:leader_id], follower_id: current_user.id) if current_user.can_follow?(leader)
+   
+    redirect_to people_path
+  end
+
   def destroy
     @relationship = Relationship.find(params[:id])
     @relationship.delete if @relationship.follower_id == current_user.id
     redirect_to people_path
   end
+
+
 end
