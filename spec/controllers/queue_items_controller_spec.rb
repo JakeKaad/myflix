@@ -142,7 +142,7 @@ describe QueueItemsController do
 
       it "sets the flash error message" do 
         post :update_queue, queue_items: [{id: queue_item1.id, position: 3.2}, {id: queue_item2.id, position: 2}]
-        expect(flash[:error]).to be_present
+        expect(flash[:danger]).to be_present
       end
 
       it "does not change the queue items" do
