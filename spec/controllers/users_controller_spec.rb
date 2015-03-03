@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UsersController do 
 
-  describe "GETs new" do 
+  describe "GET new" do 
     it 'sets @user' do 
       get :new 
       expect(assigns(:user)).to be_instance_of(User)
@@ -36,9 +36,11 @@ describe UsersController do
       it "sets @user" do 
         post :create, user: { full_name: "test name", password: 'password'}
         expect(assigns(:user)).to be_instance_of(User)
-        end
+      end
     end
+  end
 
+<<<<<<< HEAD
     context "sending emails" do 
       it "sends out an email to the user with valid inputs" do 
         post :create, user: {email: "alice_in@wonderland.com", password: 'password', full_name: "Alice White"}
@@ -48,5 +50,39 @@ describe UsersController do
       it "does not send out an email with invalid inputs"
     end
 
+=======
+  describe "GET show" do 
+    it 'sets @user correctly' do 
+      alice = Fabricate(:user)
+      joe = Fabricate(:user)
+      set_current_user(joe)
+      get :show, id: alice.id
+      expect(assigns(:user)).to eq(alice)
+    end
+
+    it "redirects if current user not logged in" do 
+      alice = Fabricate(:user)
+      get :show, id: alice.id
+      expect(response).to redirect_to login_path
+    end
+
+    it "sets @queue_items to @user's queue_items" do 
+      alice = Fabricate(:user)
+      set_current_user(alice)
+      queue_item1 = Fabricate(:queue_item, user: alice)
+      queue_item2 = Fabricate(:queue_item, user: alice)
+      get :show, id: alice.id
+      expect(assigns(:queue_items)).to match_array([queue_item1, queue_item2])
+    end
+
+    it "sets @reviews to @user's reviews" do 
+      alice = Fabricate(:user)
+      set_current_user(alice)
+      review1 = Fabricate(:review, user: alice)
+      review2 = Fabricate(:review, user: alice)
+      get :show, id: alice.id
+      expect(assigns(:reviews)).to match_array([review1, review2])
+    end
+>>>>>>> ccf23f350547b2214fd3084a02367222c4e0e37d
   end
 end
