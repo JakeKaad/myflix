@@ -38,9 +38,7 @@ describe UsersController do
         expect(assigns(:user)).to be_instance_of(User)
       end
     end
-  end
-
-<<<<<<< HEAD
+    
     context "sending emails" do 
       it "sends out an email to the user with valid inputs" do 
         post :create, user: {email: "alice_in@wonderland.com", password: 'password', full_name: "Alice White"}
@@ -49,8 +47,10 @@ describe UsersController do
       it "sends out an email containing the user's name with valid inputs"
       it "does not send out an email with invalid inputs"
     end
+  end
 
-=======
+
+
   describe "GET show" do 
     it 'sets @user correctly' do 
       alice = Fabricate(:user)
@@ -83,6 +83,6 @@ describe UsersController do
       get :show, id: alice.id
       expect(assigns(:reviews)).to match_array([review1, review2])
     end
->>>>>>> ccf23f350547b2214fd3084a02367222c4e0e37d
+
   end
 end
